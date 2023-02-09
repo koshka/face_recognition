@@ -1,5 +1,5 @@
 .image-link-form {
-  margin: 50px auto;
+  margin: 20px auto;
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -54,4 +54,8 @@
 .input-wrapper button:active {
   background: linear-gradient(89deg, #f148cf 0%, #0ba8b9 100%);
   border: 1px solid white;
+}
+
+.input-wrapper button:disabled {
+  cursor: default;
 }

@@ -1,0 +1,18 @@
+.face-recognition img {
+  height: 350px;
+}
+
+.image-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+}
+
+.bar.ht {
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+}
