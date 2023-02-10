@@ -17,48 +17,10 @@
 
 .input-wrapper input {
   margin: 20px 0;
-  height: 40px;
-  text-align: center;
-  background: transparent;
-  color: white;
-  -webkit-appearance: none;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.input-wrapper input:focus {
-  border: 1px solid white;
-}
-
-.input-wrapper input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.input-wrapper button {
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  color: white;
-  background-color: transparent;
-  background: linear-gradient(89deg, #ff5edf 0%, #04c8de 100%);
 }
 
 .input-wrapper button:active,
 .input-wrapper button:hover {
   border: 1px solid white;
   cursor: pointer;
-}
-
-.input-wrapper button:active {
-  background: linear-gradient(89deg, #f148cf 0%, #0ba8b9 100%);
-  border: 1px solid white;
-}
-
-.input-wrapper button:disabled {
-  background: linear-gradient(89deg, #ff5edf 0%, #04c8de 100%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  cursor: default;
-  opacity: 0.5;
 }

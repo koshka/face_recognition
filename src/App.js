@@ -1,16 +1,14 @@
-import "./App.css";
+import "./App.scss";
 
 import FaceRecognition from "components/FaceRecognition";
 import Navigation from "components/Navigation";
 import ImageLinkForm from "components/ImageLinkForm";
 import Rank from "components/Rank/Rank";
 import ParticlesBg from "particles-bg";
+import SignIn from "components/SignIn";
 import { useState } from "react";
 
 import { detect } from "faceRecognitionAPI";
-
-const DEFAULT_URL =
-  "https://www.salientwomen.com/wp-content/uploads/2020/03/Audrey-portada-1.jpg";
 
 function App() {
   const [url, setURL] = useState("");
@@ -45,6 +43,7 @@ function App() {
     <div className="app">
       <ParticlesBg color="#ffffff" bg={true} num={42} type="cobweb" />
       <Navigation />
+      <SignIn />
       <Rank />
       <ImageLinkForm
         isLoading={isLoading}
