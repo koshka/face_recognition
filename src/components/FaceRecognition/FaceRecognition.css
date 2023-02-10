@@ -7,12 +7,7 @@
   position: relative;
 }
 
-.bar {
+.face-box {
   position: absolute;
-}
-
-.bar.ht {
-  width: 100%;
-  height: 2px;
-  background-color: aqua;
+  border: 3px solid #04c8de;
 }

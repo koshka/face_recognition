@@ -57,5 +57,8 @@
 }
 
 .input-wrapper button:disabled {
+  background: linear-gradient(89deg, #ff5edf 0%, #04c8de 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   cursor: default;
+  opacity: 0.5;
 }
