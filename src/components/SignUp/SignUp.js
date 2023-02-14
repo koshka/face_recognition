@@ -1,43 +1,40 @@
 import ROUTES from "constants/Routes";
 import RouteContext from "context/RouteContext";
 import React, { useContext } from "react";
-import "./SignIn.scss";
+import "components/SignIn/SignIn.scss";
 
-const SignIn = () => {
+const SignUp = () => {
   const { onRouteChange } = useContext(RouteContext);
 
   return (
-    <form className="auth-form">
+    <form className="auth-form" autoСomplete="off">
       <div className="container">
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
 
-        <label htmlFor="username">
+        <label htmlFor="uname">
           <b>Username</b>
         </label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          name="username"
-          required
-        />
+        <input type="text" placeholder="Enter Username" name="uname" required />
 
-        <label htmlFor="password">
+        <label htmlFor="pwd">
           <b>Password</b>
         </label>
         <input
+          autocomplete="off"
           type="password"
           placeholder="Enter Password"
-          name="password"
+          name="pwd"
           required
         />
 
         <button type="submit" onClick={() => onRouteChange(ROUTES.HOME)}>
-          Sign In
+          Sign Up
         </button>
-        <button onClick={() => onRouteChange(ROUTES.SIGNUP)}>Sign Up</button>
+
+        <button onClick={() => onRouteChange(ROUTES.SIGNIN)}>Sign In</button>
       </div>
     </form>
   );
 };
 
-export default SignIn;
+export default SignUp;

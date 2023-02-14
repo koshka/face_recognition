@@ -3,8 +3,16 @@
   display: flex;
   margin: 20px 0;
   justify-content: space-between;
-}
 
-.navigation p {
-  color: white;
+  p {
+    color: white;
+  }
+
+  .right {
+    display: flex;
+
+    p {
+      margin-left: 20px;
+    }
+  }
 }

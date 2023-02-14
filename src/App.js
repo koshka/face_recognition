@@ -6,14 +6,18 @@ import ImageLinkForm from "components/ImageLinkForm";
 import Rank from "components/Rank/Rank";
 import ParticlesBg from "particles-bg";
 import SignIn from "components/SignIn";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import RouteContext from "context/RouteContext";
 
 import { detect } from "faceRecognitionAPI";
+import ROUTES from "constants/Routes";
+import SignUp from "components/SignUp";
 
 function App() {
   const [url, setURL] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [boxes, setBoxes] = useState([]);
+  const [route, setRoute] = useState(ROUTES.SIGNIN);
 
   const isURLEmpty = url == null || url === "";
 
@@ -39,23 +43,39 @@ function App() {
       });
   };
 
+  const content = useMemo(() => {
+    switch (route) {
+      case ROUTES.HOME:
+        return (
+          <>
+            <Rank />
+            <ImageLinkForm
+              isLoading={isLoading}
+              onChange={(newURL) => {
+                setURL(newURL);
+                setBoxes([]);
+              }}
+              onDetect={onDetect}
+              value={url}
+            />
+            <FaceRecognition boxes={boxes} imageURL={url} />
+          </>
+        );
+      case ROUTES.SIGNIN:
+        return <SignIn />;
+      case ROUTES.SIGNUP:
+        return <SignUp />;
+    }
+  });
+
   return (
-    <div className="app">
-      <ParticlesBg color="#ffffff" bg={true} num={42} type="cobweb" />
-      <Navigation />
-      <SignIn />
-      <Rank />
-      <ImageLinkForm
-        isLoading={isLoading}
-        onChange={(newURL) => {
-          setURL(newURL);
-          setBoxes([]);
-        }}
-        onDetect={onDetect}
-        value={url}
-      />
-      <FaceRecognition boxes={boxes} imageURL={url} />
-    </div>
+    <RouteContext.Provider value={{ route, onRouteChange: setRoute }}>
+      <div className="app">
+        <ParticlesBg color="#ffffff" bg={true} num={42} type="cobweb" />
+        <Navigation />
+        {content}
+      </div>
+    </RouteContext.Provider>
   );
 }
 

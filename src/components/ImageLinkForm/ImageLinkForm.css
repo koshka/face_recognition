@@ -18,9 +18,3 @@
 .input-wrapper input {
   margin: 20px 0;
 }
-
-.input-wrapper button:active,
-.input-wrapper button:hover {
-  border: 1px solid white;
-  cursor: pointer;
-}
